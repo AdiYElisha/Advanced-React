@@ -39,7 +39,7 @@ export default class Items extends Component {
         <Query
           query={ALL_ITEMS_QUERY}
           variables={{
-            skip: this.props.page * (perPage - 1),
+            skip: (this.props.page - 1) * perPage,
             first: perPage
           }}
         >
@@ -55,7 +55,7 @@ export default class Items extends Component {
             );
           }}
         </Query>
-        <Pagination />
+        <Pagination page={this.props.page} />
       </Center>
     );
   }

@@ -48,7 +48,6 @@ export default class UpdateItem extends Component {
 
   upateItem = async (e, updateItemMutation) => {
     e.preventDefault();
-    console.log("Updating item!");
     const res = await updateItemMutation({
       variables: {
         id: this.props.id,
